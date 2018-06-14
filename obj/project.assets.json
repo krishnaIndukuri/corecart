@@ -12668,11 +12668,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\DEV\\corecart\\corecart.csproj",
+      "projectUniqueName": "C:\\DEV\\corecartweb\\corecart.csproj",
       "projectName": "corecart",
-      "projectPath": "C:\\DEV\\corecart\\corecart.csproj",
+      "projectPath": "C:\\DEV\\corecartweb\\corecart.csproj",
       "packagesPath": "C:\\Users\\ikris\\.nuget\\packages\\",
-      "outputPath": "C:\\DEV\\corecart\\obj\\",
+      "outputPath": "C:\\DEV\\corecartweb\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

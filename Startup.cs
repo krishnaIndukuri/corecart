@@ -18,6 +18,7 @@ namespace corecart
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<IGreeting, Greeting>();
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,8 +55,9 @@ namespace corecart
             //    //    }
             //    //};
             //});
-
-            
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
+            app.UseMvcWithDefaultRoute();
             app.UseWelcomePage(new WelcomePageOptions {
                 Path = "/wp"
             });

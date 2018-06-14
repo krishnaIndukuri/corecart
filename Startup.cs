@@ -24,39 +24,46 @@ namespace corecart
         public void Configure(IApplicationBuilder app, IHostingEnvironment env,IGreeting config,ILogger<Startup> logger)
         {
             var greeting = config.getGreetings();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
-
-            app.Use(next =>
+            else
             {
-                return async context => {
-                   await context.Response.WriteAsync("HIT!!");
-                };
-                //return async context =>
-                //{
-                //    logger.LogInformation("Request Started");
-                //    if(context.Request.Path.StartsWithSegments("/mym"))
-                //    {
-                //        await context.Response.WriteAsync("HIT!!");
-                //        logger.LogInformation("Request handled..");
-                //    }
-                //    else
-                //    {
-                //        await next(context);
-                //        logger.LogInformation("Request outgoing..");
-                //    }
-                //};
-            });
+                app.UseExceptionHandler();
+            }
+            //app.Use(next =>
+            //{
+            //    return async context => {
+            //       await context.Response.WriteAsync("HIT!!");
+            //    };
 
+            //    //return async context =>
+            //    //{
+            //    //    logger.LogInformation("Request Started");
+            //    //    if(context.Request.Path.StartsWithSegments("/mym"))
+            //    //    {
+            //    //        await context.Response.WriteAsync("HIT!!");
+            //    //        logger.LogInformation("Request handled..");
+            //    //    }
+            //    //    else
+            //    //    {
+            //    //        await next(context);
+            //    //        logger.LogInformation("Request outgoing..");
+            //    //    }
+            //    //};
+            //});
+
+            
             app.UseWelcomePage(new WelcomePageOptions {
                 Path = "/wp"
             });
 
             app.Run(async (context) =>
             {
-                await context.Response.WriteAsync(greeting);
+                //throw new Exception();
+                await context.Response.WriteAsync($"{greeting} and {env.EnvironmentName} ");
             });
         }
     }

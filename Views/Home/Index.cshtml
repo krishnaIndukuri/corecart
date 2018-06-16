@@ -1,18 +1,19 @@
-﻿@model IEnumerable<corecart.Models.Restaurant> ;
+﻿@model corecart.ViewModels.HomeRestaurantViewModel ;
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title></title>
 </head>
 <body>
+    <h1>@Model.greeting</h1>
     <table>
-        @foreach (var restaurant in Model)
+        @foreach (var restaurant in Model.resturants)
         {
         <tr>
             <td>@restaurant.Id</td>
             <td>@restaurant.Name</td>
         </tr>
 
-            }
+        }
         </table>
 </body>
 </html>

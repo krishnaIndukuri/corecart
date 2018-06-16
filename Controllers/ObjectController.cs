@@ -1,16 +1,14 @@
 ﻿using corecart.Models;
 using Microsoft.AspNetCore.Mvc;
 
-
 namespace corecart.Controllers
 {
-    public class HomeController : Controller
+    public class ObjectController : Controller
     {
-        public IActionResult Index()
+        public ObjectResult Index()
         {
             Restaurant obj = new Restaurant { Id = 201, Name = "Hyderabad House" };
-            return View(obj);
+            return new ObjectResult(obj);
         }
     }
-    
 }

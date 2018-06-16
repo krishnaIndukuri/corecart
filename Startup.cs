@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -55,18 +56,23 @@ namespace corecart
             //    //    }
             //    //};
             //});
-            app.UseDefaultFiles();
-            app.UseStaticFiles();
-            app.UseMvcWithDefaultRoute();
-            app.UseWelcomePage(new WelcomePageOptions {
-                Path = "/wp"
-            });
+            //app.UseDefaultFiles();
+            //app.UseStaticFiles();
+            app.UseMvc(configureRoutes);
+            //app.UseWelcomePage(new WelcomePageOptions {
+            //    Path = "/wp"
+            //});
 
             app.Run(async (context) =>
             {
                 //throw new Exception();
                 await context.Response.WriteAsync($"{greeting} and {env.EnvironmentName} ");
             });
+        }
+
+        private void configureRoutes(IRouteBuilder obj)
+        {
+            obj.MapRoute("Default", "{Controller=Home}/{Action=Index}/{Id?}");
         }
     }
 }

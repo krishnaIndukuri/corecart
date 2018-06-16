@@ -1,4 +1,5 @@
-﻿using corecart.Services;
+﻿using corecart.Models;
+using corecart.Services;
 using corecart.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
@@ -22,6 +23,15 @@ namespace corecart.Controllers
                 greeting = _greeting.getGreetings()
             };
             return View(objviewModel);
+        }
+        public IActionResult Detail(int Id)
+        {
+            Restaurant restaurant = _restaurantData.GetRestaurant(Id);
+            if (restaurant == null)
+            {
+                return RedirectToAction("Index");
+            }
+            return View(restaurant);
         }
     }
     

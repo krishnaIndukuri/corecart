@@ -6,5 +6,7 @@ namespace corecart.Services
     public interface IRestaurantData
     {
         IEnumerable<Restaurant> GetAll();
+        Restaurant GetRestaurant(int id);
     }
+
 }

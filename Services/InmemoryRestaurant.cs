@@ -22,6 +22,11 @@ namespace corecart.Services
             return Restaurants;
         }
 
+        public Restaurant GetRestaurant(int id)
+        {
+            return Restaurants.FirstOrDefault(r => r.Id == id);
+        }
+
         List<Restaurant> Restaurants;
     }
 }

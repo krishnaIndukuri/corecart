@@ -9,5 +9,6 @@ namespace corecart.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public CousinType Cousin { get; set; }
     }
 }

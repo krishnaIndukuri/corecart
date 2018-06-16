@@ -9,3 +9,14 @@ C:\DEV\corecart\obj\Debug\netcoreapp2.0\corecart.AssemblyInfoInputs.cache
 C:\DEV\corecart\obj\Debug\netcoreapp2.0\corecart.AssemblyInfo.cs
 C:\DEV\corecart\obj\Debug\netcoreapp2.0\corecart.dll
 C:\DEV\corecart\obj\Debug\netcoreapp2.0\corecart.pdb
+C:\DEV\corecartweb\bin\Debug\netcoreapp2.0\corecart.deps.json
+C:\DEV\corecartweb\bin\Debug\netcoreapp2.0\corecart.runtimeconfig.json
+C:\DEV\corecartweb\bin\Debug\netcoreapp2.0\corecart.runtimeconfig.dev.json
+C:\DEV\corecartweb\bin\Debug\netcoreapp2.0\corecart.dll
+C:\DEV\corecartweb\bin\Debug\netcoreapp2.0\corecart.pdb
+C:\DEV\corecartweb\obj\Debug\netcoreapp2.0\corecart.csprojAssemblyReference.cache
+C:\DEV\corecartweb\obj\Debug\netcoreapp2.0\corecart.csproj.CoreCompileInputs.cache
+C:\DEV\corecartweb\obj\Debug\netcoreapp2.0\corecart.AssemblyInfoInputs.cache
+C:\DEV\corecartweb\obj\Debug\netcoreapp2.0\corecart.AssemblyInfo.cs
+C:\DEV\corecartweb\obj\Debug\netcoreapp2.0\corecart.dll
+C:\DEV\corecartweb\obj\Debug\netcoreapp2.0\corecart.pdb

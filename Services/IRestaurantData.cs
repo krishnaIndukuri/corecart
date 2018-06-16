@@ -7,6 +7,7 @@ namespace corecart.Services
     {
         IEnumerable<Restaurant> GetAll();
         Restaurant GetRestaurant(int id);
+        Restaurant AddRestaurant(Restaurant restaurant);
     }
 
 }

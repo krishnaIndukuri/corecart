@@ -1,0 +1,12 @@
+﻿@using  corecart.Models;
+@model Restaurant;
+<h1>Create</h1>
+<form method="post">
+    <input type="text" asp-for="Name" />
+    <br />
+    <select asp-for="Cousin" asp-items="@Html.GetEnumSelectList<CousinType>()">
+
+    </select>
+
+    <input type="submit" name="Save" value="Save"  />
+</form>

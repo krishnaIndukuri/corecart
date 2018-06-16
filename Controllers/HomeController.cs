@@ -33,6 +33,24 @@ namespace corecart.Controllers
             }
             return View(restaurant);
         }
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Create(CreateRestaurant restaurant)
+        {
+            Restaurant _restaurant = new Restaurant()
+            {
+                Name=restaurant.Name,
+                Cousin=restaurant.Cousin
+            };
+            _restaurant= _restaurantData.AddRestaurant(_restaurant);
+
+           return RedirectToAction("Detail",new { Id = _restaurant.Id});
+        }
+
     }
     
 }

@@ -15,7 +15,7 @@ namespace corecart
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<IGreeting, Greeting>();
-            services.AddScoped<IRestaurantData, InmemoryRestaurant>();
+            services.AddSingleton<IRestaurantData, InmemoryRestaurant>();
             services.AddMvc();
         }
 

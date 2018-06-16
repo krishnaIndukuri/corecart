@@ -2,10 +2,16 @@
 <html>
 <body>
     <h1>@Model.Name</h1>
-<div>
-    ------Details-----
-</div>
-    <a asp-action="Index" >Home</a>
+    <div>
+        Name: <span>@Model.Name</span>
+    </div>
+    <div>
+        Id: <span>@Model.Id</span>
+    </div>
+    <div>
+        Cousin Type: <span>@Model.Cousin</span>
+    </div>
+    <a asp-action="Index">Home</a>
 </body>
 
 </html>

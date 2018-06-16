@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using corecart.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
@@ -19,6 +15,7 @@ namespace corecart
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<IGreeting, Greeting>();
+            services.AddScoped<IRestaurantData, InmemoryRestaurant>();
             services.AddMvc();
         }
 

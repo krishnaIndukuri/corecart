@@ -1,15 +1,19 @@
 ﻿using corecart.Models;
+using corecart.Services;
 using Microsoft.AspNetCore.Mvc;
-
 
 namespace corecart.Controllers
 {
     public class HomeController : Controller
     {
+        private IRestaurantData _restaurantData;
+        public HomeController(IRestaurantData restaurantData)
+        {
+            _restaurantData = restaurantData;
+        }
         public IActionResult Index()
         {
-            Restaurant obj = new Restaurant { Id = 201, Name = "Hyderabad House" };
-            return View(obj);
+            return View(_restaurantData.GetAll());
         }
     }
     

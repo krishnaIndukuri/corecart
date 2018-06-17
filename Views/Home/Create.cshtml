@@ -2,11 +2,14 @@
 @model Restaurant;
 <h1>Create</h1>
 <form method="post">
-    <input type="text" asp-for="Name" />
+    
+    <div><label asp-for="Name"></label> <input type="text" asp-for="Name" />
+    <span asp-validation-for="Name"></span>
+    </div>
     <br />
-    <select asp-for="Cousin" asp-items="@Html.GetEnumSelectList<CousinType>()">
-
-    </select>
-
+    <div>
+      <label asp-for="Cousin"></label>  <select asp-for="Cousin" asp-items="@Html.GetEnumSelectList<CousinType>()"></select>
+    </div>
     <input type="submit" name="Save" value="Save"  />
+    
 </form>

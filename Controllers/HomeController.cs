@@ -39,16 +39,24 @@ namespace corecart.Controllers
             return View();
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Create(CreateRestaurant restaurant)
         {
-            Restaurant _restaurant = new Restaurant()
+            if (ModelState.IsValid)
             {
-                Name=restaurant.Name,
-                Cousin=restaurant.Cousin
-            };
-            _restaurant= _restaurantData.AddRestaurant(_restaurant);
+                Restaurant _restaurant = new Restaurant()
+                {
+                    Name = restaurant.Name,
+                    Cousin = restaurant.Cousin
+                };
+                _restaurant = _restaurantData.AddRestaurant(_restaurant);
 
-           return RedirectToAction("Detail",new { Id = _restaurant.Id});
+                return RedirectToAction("Detail", new { Id = _restaurant.Id });
+            }
+            else
+            {
+                return View();
+            }
         }
 
     }
